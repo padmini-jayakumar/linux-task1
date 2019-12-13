@@ -1,0 +1,62 @@
+1.Displaying the size of the folder:
+du -h gs-gradle.zip | awk '{$1 = sprintf("%4.4f",$1/1024)"MB";print}'
+
+2. Display the size of the test_dir folder:
+
+cd test_dir
+du -h
+
+3.Palindrome
+
+echo "enter:"
+read str
+echo
+len=`echo $str | wc -c`
+len=`expr $len - 1`
+i=1
+j=`expr $len / 2`
+while test $i -le $j
+do
+k=`echo $str | cut -c $i`
+l=`echo $str | cut -c $len`
+if test $k != $l
+then 
+echo "not palindrome!!"
+exit
+fi
+i=`expr $i + 1`
+len=`expr $len - 1`
+done
+echo "palindrome"
+
+4. Changing the file permission:
+
+chmod 700 <filename>
+
+5.Displaying the first column of the file
+
+awk '{print $1}' <filename>
+
+6. Opening the firefox using terminal and to find the process id:
+
+type -a firefox
+firefox
+pidof firefox
+
+7.Find the text "ubuntu" and repalce it with "Centos" without opening it:
+
+vi test.txt
+  i love ubuntu
+
+sed -i 's/ubuntu/Centos/9' f.txt
+
+8. ip address:
+
+curl ifconfig.me
+
+9. Naming  a with current date and time:
+
+touch "$(date +'%Y_%m_%d_%I_%M').txt"
+
+
+
